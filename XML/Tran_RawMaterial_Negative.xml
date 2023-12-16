@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<test thread-count="5" name="Test">
+		<classes>
+
+			<class name="Transactions_Positive.TC_01_Purchase_Order_Entry" />
+			<class name="A_Transactions_Return.TC_01_Purchase_Order_Entry_Return"/>
+			<class name="A_Transaction_ReInitiate.TC_01_Purchase_Order_Entry_ReInitiate"/>
+			<class name="Transactions_Release.TC_01_Purchase_Order_Entry_Release" />
+
+			<class name="Transactions_Positive.TC_02_Good_Recipt_With_PO" />
+			<class name="A_Transactions_Return.TC_02_Good_Recipt_With_PO_Return"/>
+			<class name="A_Transaction_ReInitiate.TC_02_Good_Recipt_With_PO_ReInitiate"/>
+			<class name="Transactions_Release.TC_02_Good_Recipt_With_PO_Release" />
+			
+			<class name="Transactions_Positive.TC_04_Quality_Inspection1" />
+		    <class name="A_Transaction_ReInitiate.TC_03_Quality_Inspection_Reject"/>
+			<class name="Transactions_Release.TC_03_Quality_Inspection_Approve" />
+			
+			
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->
