@@ -48,7 +48,7 @@ public class TC_01_Material_Master_RawMaterial extends BaseClass
 			String InitiatorPassword =xls.getCellData("Changable_Data", "InitiatorPassword", i);
 			String WrongPassword =xls.getCellData("Changable_Data", "WrongPassword", i);
 
-			WMPS_Login("117777","pwdInit");Thread.sleep(2000);
+			WMPS_Login("117777", "pwdInit");
 
 			// driver.findElement(By.xpath("//*[contains(text(),'Hetero Labs')]")).click();
 			//driver.findElement(By.cssSelector("div[class='tile purple'] p")).click();Thread.sleep(2000);

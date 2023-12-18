@@ -47,7 +47,7 @@ public class TC_04_Manufacturer_Assignment_01 extends BaseClass
 			String Date2ML =xls.getCellData("Date", "Date2ML", i);
 //***********************************************************************************************************************************
 
-			WMPS_Login("441111","Password");			
+			WMPS_Login("117777", "pwdInit");
 			mp.Master_Click();			
 //			WebElement MoveCursor = driver.findElement(By.xpath("(//*[text()='Transactions '])[1]"));Thread.sleep(2000);
 //			actions.moveToElement(MoveCursor).perform();Thread.sleep(1000);

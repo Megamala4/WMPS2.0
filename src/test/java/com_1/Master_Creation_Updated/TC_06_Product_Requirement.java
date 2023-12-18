@@ -42,7 +42,7 @@ public class TC_06_Product_Requirement extends BaseClass
 //DataMapping
 			String Vendor_Name_Manufacturer =xls.getCellData("Excel_Data", "Vendor_Name_Manufacturer", i);//*************
 
-			WMPS_Login("441111","Password");Thread.sleep(2000);
+			WMPS_Login("117777", "pwdInit");
 			
 			WebElement MoveCursor = driver.findElement(By.xpath("//*[text()='Masters ']"));Thread.sleep(2000);
 			actions.moveToElement(MoveCursor).perform();Thread.sleep(1000);	
