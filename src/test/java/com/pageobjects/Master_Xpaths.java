@@ -511,7 +511,7 @@ public class Master_Xpaths {
 	@FindBy(xpath = "(//span[@class='ng-arrow-wrapper'])[7]")
 	WebElement InspectionType_Click;
 
-	@FindBy(xpath = "(//*[@type='text'])[17]")
+	@FindBy(xpath = "(//*[@type='text'])[18]")
 	WebElement Input_Text;
 
 
@@ -531,7 +531,7 @@ public class Master_Xpaths {
 	@FindBy(xpath = "(//span[@class='ng-arrow-wrapper'])[8]")
 	WebElement StorageLocations_Click1;
 
-	@FindBy(xpath = "(//*[@type='text'])[18]")
+	@FindBy(xpath = "(//*[@type='text'])[19]")
 	WebElement Input_Text1;
 
 
@@ -735,7 +735,7 @@ public class Master_Xpaths {
 		Js.executeScript("arguments[0].setAttribute('style', 'background: ; border: 4px solid black;');", Color);
 
 		Supplier_Assignment.click();
-		Thread.sleep(500);
+		Thread.sleep(1000);
 	}
 
 	//Material_Description_Text******************************************************************************************************

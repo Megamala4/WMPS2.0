@@ -33,18 +33,20 @@ public class TC_03_Manufacturer_Assignment_Release extends BaseClass
 		{ 
 			String ApproverPassword=xls.getCellData("Changable_Data", "ApproverPassword", i);			
 
-			String Material_Description =xls.getCellData("Excel_Data", "Material_Description", i);
+			String Material_Description =xls.getCellData("Excel_Data", "MaterialMasterRM", i);
 			String Password=xls.getCellData("Changable_Data", "Password", i);
 			String Material_Description_RawMaterial =xls.getCellData("Excel_Data", "MaterialDescription_RM", i);
 
-			WMPS_Login_Release("441122","ApproverPassword");			
+			WMPS_Login("Approver_ID", "Approver_Password");
 			w.Second_Level();	
 			w.ReviewApprovalCategory("Manufacture Assignment Release");
 			w.Search_Button();	
-			//w.SearchBox(Material_Description);Thread.sleep(2000);Thread.sleep(2000);
+			w.SearchBox(Material_Description);Thread.sleep(2000);Thread.sleep(2000);
 			w.Edit_Action_Button();	
 			w.Comments("Manufacture Assignment Released Sucessfully");Thread.sleep(2000);			
 			w.ActionLevel("Release");
 			w.Submit();w.Yes();w.Password_Fill(ApproverPassword);
-			w.SubmitType_2();w.Ok();driver.close();
+			w.SubmitType_2();
+//			w.Ok();
+//			driver.close();
 		}}}

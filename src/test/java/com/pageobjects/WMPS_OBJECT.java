@@ -896,7 +896,7 @@ public class WMPS_OBJECT {
 	}
 
 	//Comments				
-	@FindBy(how=How.XPATH,using="//*[@formcontrolname='comments' or @formcontrolname='Comments']")
+	@FindBy(how=How.XPATH,using="(//*[@formcontrolname='comments' or @formcontrolname='Comments'])")
 	public WebElement Comments;
 	public void Comments(String x) throws Exception
 	{
@@ -1312,7 +1312,7 @@ public class WMPS_OBJECT {
 //	}
 	//SEARCH_BUTTON
 
-	@FindBy(how=How.XPATH,using="//*[contains(text(),'Search') or contains(text(),'Entry')]")
+	@FindBy(how=How.XPATH,using="(//*[contains(text(),'Search') or contains(text(),'Entry')])[2]")
 	public WebElement Search_Button;
 	public void Search_Button() throws Exception
 	{
@@ -2138,21 +2138,103 @@ public class WMPS_OBJECT {
 		TT_16.sendKeys(Keys.ENTER);//Thread.sleep(500);
 	}
 	
-	//TT_16
-		@FindBy(xpath = "(//*[@type='text'])[16]")
+
+		
+		//TT_17
+
+		@FindBy(xpath = "(//*[@type='text'])[17]")
+
 		WebElement TT_17;
-		public void TT_17(String x) throws InterruptedException
+
+		public void TextBox17E(String x) throws InterruptedException
+
 		{
-
+	 
 			WebElement Color = driver.findElement(By.xpath("(//*[@type='text'])[17]"));
-			JavascriptExecutor Js = (JavascriptExecutor) driver;
-			Js.executeScript("arguments[0].setAttribute('style', 'background: ; border: 1px solid red;');", Color);
 
-			TT_16.click();//Thread.sleep(500);
-			TT_16.sendKeys(x);//Thread.sleep(500);
-			TT_16.sendKeys(Keys.ENTER);//Thread.sleep(500);
+			JavascriptExecutor Js = (JavascriptExecutor) driver;
+
+			Js.executeScript("arguments[0].setAttribute('style', 'background: ; border: 1px solid red;');", Color);
+	 
+			TT_17.click();//Thread.sleep(500);
+
+			TT_17.sendKeys(x);//Thread.sleep(500);
+
+			TT_17.sendKeys(Keys.ENTER);//Thread.sleep(500);
+
 		}
-	
+
+		//TT_18
+
+		@FindBy(xpath = "(//*[@type='text'])[15]")
+
+		WebElement TT_18;
+
+		public void TextBox18(String x) throws InterruptedException
+
+		{
+	 
+			WebElement Color = driver.findElement(By.xpath("(//*[@type='text'])[18]"));
+
+			JavascriptExecutor Js = (JavascriptExecutor) driver;
+
+			Js.executeScript("arguments[0].setAttribute('style', 'background: ; border: 1px solid red;');", Color);
+	 
+			TT_18.click();//Thread.sleep(500);
+
+			TT_18.sendKeys(x);//Thread.sleep(500);
+
+			TT_18.sendKeys(Keys.ENTER);//Thread.sleep(500);
+
+		}
+
+		//TT_19
+
+		@FindBy(xpath = "(//*[@type='text'])[19]")
+
+		WebElement TT_19;
+
+		public void TextBox19(String x) throws InterruptedException
+
+		{
+	 
+			WebElement Color = driver.findElement(By.xpath("(//*[@type='text'])[19]"));
+
+			JavascriptExecutor Js = (JavascriptExecutor) driver;
+
+			Js.executeScript("arguments[0].setAttribute('style', 'background: ; border: 1px solid red;');", Color);
+	 
+			TT_19.click();//Thread.sleep(500);
+
+			TT_19.sendKeys(x);//Thread.sleep(500);
+
+			TT_19.sendKeys(Keys.ENTER);//Thread.sleep(500);
+
+		}
+
+		//TT_20
+
+		@FindBy(xpath = "(//*[@type='text'])[20]")
+
+		WebElement TT_20;
+
+		public void TextBox20(String x) throws InterruptedException
+
+		{
+	 
+			WebElement Color = driver.findElement(By.xpath("(//*[@type='text'])[20]"));
+
+			JavascriptExecutor Js = (JavascriptExecutor) driver;
+
+			Js.executeScript("arguments[0].setAttribute('style', 'background: ; border: 1px solid red;');", Color);
+	 
+			TT_20.click();//Thread.sleep(500);
+
+			TT_20.sendKeys(x);//Thread.sleep(500);
+
+			TT_20.sendKeys(Keys.ENTER);//Thread.sleep(500);
+
+		}
 	//**************************************************************************************************************8*****	
 	//TEN_01
 	@FindBy(xpath = "(//*[@type='number'])[1]")
@@ -2170,12 +2252,12 @@ public class WMPS_OBJECT {
 	}
 
 	//TEN_02
-	@FindBy(xpath = "(//*[@type='number'])[2]")
+	@FindBy(xpath = "//*[@type='number']")
 	WebElement TEN_02;
 	public void TEN_02(String x) throws InterruptedException
 	{
 
-		WebElement Color = driver.findElement(By.xpath("(//*[@type='number'])[2]"));
+		WebElement Color = driver.findElement(By.xpath("//*[@type='number']"));
 		JavascriptExecutor Js = (JavascriptExecutor) driver;
 		Js.executeScript("arguments[0].setAttribute('style', 'background: ; border: 1px solid red;');", Color);
 
@@ -2305,7 +2387,7 @@ public class WMPS_OBJECT {
 	public WebElement  CityId;
 	public void  CityId(String x) throws Exception
 	{
-		WebElement Color = driver.findElement(By.xpath("//*[@formcontrolname='street2']"));
+		WebElement Color = driver.findElement(By.xpath("//*[@formcontrolname='cityId']"));
 		JavascriptExecutor Js = (JavascriptExecutor) driver;
 		Js.executeScript("arguments[0].setAttribute('style', 'background: ; border: 4px solid black;');", Color);
 		CityId.sendKeys(x);Thread.sleep(500);

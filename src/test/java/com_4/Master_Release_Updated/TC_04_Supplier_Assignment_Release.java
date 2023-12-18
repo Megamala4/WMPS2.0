@@ -35,7 +35,7 @@ public class TC_04_Supplier_Assignment_Release extends BaseClass
 			String Material_Description =xls.getCellData("Excel_Data", "Material_Description", i);
 			String Password=xls.getCellData("Changable_Data", "Password", i);
 			
-			WMPS_Login_Release("441122","ApproverPassword");			
+			WMPS_Login("Approver_ID", "Approver_Password");
 			w.Second_Level();			
 			w.ReviewApprovalCategory("Supplier Assignment Release");
 			w.Search_Button();	
@@ -44,5 +44,6 @@ public class TC_04_Supplier_Assignment_Release extends BaseClass
 			w.Comments("Supplier_Master_Release");Thread.sleep(2000);	
 			w.ActionLevel("Release");
 			w.Submit();w.Yes();w.Password_Fill(ApproverPassword);
-			w.SubmitType_2();w.Ok();driver.close();
+			w.SubmitType_2();
+			//w.Ok();driver.close();
 		}}}

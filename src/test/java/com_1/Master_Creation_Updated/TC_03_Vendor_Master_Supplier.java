@@ -24,7 +24,7 @@ public class TC_03_Vendor_Master_Supplier extends BaseClass {
 			String Country = xls.getCellData("Vendor_Supplier", "Country", i);
 			String State = xls.getCellData("Vendor_Supplier", "State", i);
 
-			WMPS_Login("117777", "pwdInit");
+			WMPS_Login("Initiator", "Initiator_Password");
 			mp.Master_Click();
 			mp.Vendor_Master();
 			w.Create();
@@ -41,9 +41,11 @@ public class TC_03_Vendor_Master_Supplier extends BaseClass {
 			w.Submit();
 			w.Yes();
 			w.Password_Fill(InitiatorPassword);
-			w.SubmitType_1();
 			w.Ok();
-			driver.close();
+			w.SubmitType_1();
+			w.Password_Fill("Hetero@5");
+			w.Ok();
+			//driver.close();
 		}
 	}
 }

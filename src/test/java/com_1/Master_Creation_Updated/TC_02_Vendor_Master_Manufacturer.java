@@ -31,7 +31,7 @@ public class TC_02_Vendor_Master_Manufacturer extends BaseClass {
 			String InitiatorPassword = xls.getCellData("Changable_Data", "InitiatorPassword", i);
 			String WrongPassword = xls.getCellData("Changable_Data", "WrongPassword", i);
 
-			WMPS_Login("117777", "pwdInit");
+			WMPS_Login("Initiator", "Initiator_Password");
 			mp.Master_Click();
 			mp.Vendor_Master();
 			w.Create();
@@ -54,8 +54,9 @@ public class TC_02_Vendor_Master_Manufacturer extends BaseClass {
 			Thread.sleep(2000);
 			w.Submit();
 			w.Yes();
-			w.Password_Fill(InitiatorPassword);
-			// w.SubmitType_1();w.Ok();driver.close();
+			w.Password_Fill("Hetero@5");
+			w.Ok();
+			w.SubmitType_1();w.Ok();driver.close();
 		}
 	}
 }

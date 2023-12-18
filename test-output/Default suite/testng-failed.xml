@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="A_Transaction_ReInitiate.TC_01_Purchase_Order_Entry_ReInitiate">
+      <class name="com_1.Master_Creation_Updated.TC_07_Customer_Master">
         <methods>
           <include name="suiteSetUp"/>
-          <include name="Purchase_Order_Entry"/>
+          <include name="Customer"/>
         </methods>
-      </class> <!-- A_Transaction_ReInitiate.TC_01_Purchase_Order_Entry_ReInitiate -->
+      </class> <!-- com_1.Master_Creation_Updated.TC_07_Customer_Master -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
