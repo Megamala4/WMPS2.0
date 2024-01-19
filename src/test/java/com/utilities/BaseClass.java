@@ -49,7 +49,6 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 @SuppressWarnings("deprecation")
 public class BaseClass {
-
 	public static WebDriver driver;
 	ExtentHtmlReporter Report;
 	protected static ExtentReports extent;
@@ -101,19 +100,17 @@ public class BaseClass {
 		FileInputStream ip = new FileInputStream(
 				"C:\\Users\\sharuk.k\\eclipse-workspaceOOS\\WMPS 2\\WMPS\\WMPS_Old\\src\\test\\resources\\properties\\Config.properties");
 		Pro.load(ip);
-
 		System.setProperty("webdriver.http.factory", "jdk-http-client");
 		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
 		System.setProperty("webdriver.chrome.silentOutput", "true");
 		driver.manage().window().maximize();
 		driver.get(Pro.getProperty("URL"));
-
 	}
 
 	// EXTEND
 	// REPORT**********************************************************************************************************
-//	@BeforeTest()
+	// @BeforeTest()
 	public void ExtentReport() {
 		String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());// time stamp
 		String repName = "Test-Report-" + timeStamp + ".html";
@@ -140,7 +137,7 @@ public class BaseClass {
 	// // driver.quit();
 	// }
 
-//	@AfterMethod()
+	// @AfterMethod()
 	public void getResult(ITestResult result) throws IOException {
 		if (result.getStatus() == ITestResult.FAILURE) {
 			Test.log(Status.FAIL, "Test Case Failed " + result.getName());
@@ -218,8 +215,7 @@ public class BaseClass {
 			enabledButtonsa2.get(0).click();
 		}
 		Thread.sleep(3000);
-		// click on menu/88888888888888888888888888888888888888888888888888888888888888
-
+		// click on menu
 		// Actions a=new Actions(driver);
 		// WebElement m= driver.findElement(By.id("navbarDropdown"));
 		// a.doubleClick(m).perform();
@@ -287,7 +283,6 @@ public class BaseClass {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
 		Thread.sleep(3000);
-
 	}
 
 	// ***************************************************************************************************
@@ -430,14 +425,26 @@ public class BaseClass {
 			termination.get(0).click();
 		}
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		Thread.sleep(1000);
+		//WebElement Color4 = driver.findElement(By.xpath("//*[contains(text(),'WMPS - Hetero Labs Limited (Unit-9) ')]"));
+		//WebElement Color4 = driver.findElement(By.xpath("//*[contains(text(),'WMPS - Hindys Lab Private Limited ')]"));
 
-		WebElement Color4 = driver.findElement(By.xpath("//*[contains(text(),'Hetero Labs')]"));
+		// ***************************************************************************************************************************
+		WebElement Color4 = driver.findElement(By.xpath("//*[contains(text(),'WMPS - ')]"));
+		// ***************************************************************************************************************************
+
 		Js.executeScript("arguments[0].setAttribute('style', 'background: ; border: 4px solid black;');", Color4);
 		try {
-			driver.findElement(By.xpath("//*[contains(text(),'Hetero Labs')]")).click();
+			// ********************************************************************************************************************************
+			driver.findElement(By.xpath("//*[contains(text(),'WMPS - ')]")).click();
+//			driver.findElement(By.xpath("//*[contains(text(),'WMPS - Hindys Lab Private Limited ')]")).click();
+//			driver.findElement(By.xpath("//*[contains(text(),'WMPS - Hetero Labs Limited (Unit-9) ')]")).click();
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		// ********************************************************************************************************************************
+
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	}
 

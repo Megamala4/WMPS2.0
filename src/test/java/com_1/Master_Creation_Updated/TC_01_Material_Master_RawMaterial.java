@@ -4,26 +4,29 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
-
 import com.pageobjects.Master_Xpaths;
 import com.pageobjects.WMPS_OBJECT;
 import com.utilities.BaseClass;
 
 public class TC_01_Material_Master_RawMaterial extends BaseClass {
-
 	@org.testng.annotations.Test
 	public static void Material_Master() throws Exception {
 		WMPS_OBJECT w = new WMPS_OBJECT(driver);
 		Master_Xpaths mp = new Master_Xpaths(driver);
 		Actions actions = new Actions(driver);
-
 		int rowcount = xls.getRowCount("Material_Master");
 		System.out.println(rowcount);
+		WMPS_Login("Initiator", "Initiator_Password");
+		mp.Master_Click();
+		mp.Material_Master();
+		// ************************************************************************************************************
 		for (int i = 2; i <= 2; i++) {
-			String Material_Type_RawMaterial = xls.getCellData("Excel_Data", "Material_Type", i);
+			// ************************************************************************************************************
 			String MaterialMasterRM = xls.getCellData("Excel_Data", "MaterialMasterRM", i);
-			String Material_Long_Description_RawMaterial = xls.getCellData("Excel_Data", "Material_Long_Description_RM",
-					i);
+			String MaterialMasterRM_Edit = xls.getCellData("Excel_Data", "MaterialMasterRM_Edit", i);
+			String Material_Type_RawMaterial = xls.getCellData("Excel_Data", "Material_Type", i);
+			// ************************************************************************************************************
+			String Material_Long_Description_RawMaterial = xls.getCellData("Excel_Data", "Material_Long_Description_RM",i);
 			String Purchase_UOM = xls.getCellData("Material_Master", "Purchase_UOM", i);
 			String Material_Number = xls.getCellData("Material_Master", "Material_Number", i);
 			String Basic_UOM = xls.getCellData("Material_Master", "Basic_UOM", i);
@@ -34,29 +37,22 @@ public class TC_01_Material_Master_RawMaterial extends BaseClass {
 			String Production_Starting_Year = xls.getCellData("Material_Master", "Production_Starting_Year", i);
 			String Remarks = xls.getCellData("Material_Master", "Remarks", i);
 			String InspectIntervalPeriod = xls.getCellData("Material_Master", "InspectIntervalPeriod", i);
-			String InspectIntervalPeriodDMY = xls.getCellData("Material_Master", "InspectIntervalPeriodDMY", i);
 			String AltUOM_X = xls.getCellData("Material_Master", "AltUOM_X", i);
 			String AltUOM = xls.getCellData("Material_Master", "AltUOM", i);
 			String AltUOM_Y = xls.getCellData("Material_Master", "AltUOM_Y", i);
 			String InspectionType = xls.getCellData("Material_Master", "InspectionType", i);
+			String InspectIntervalPeriodDMY = xls.getCellData("Material_Master", "InspectIntervalPeriodDMY", i);
 			String StorageLocations = xls.getCellData("Material_Master", "StorageLocations", i);
 			String InitiatorPassword = xls.getCellData("Changable_Data", "InitiatorPassword", i);
 			String WrongPassword = xls.getCellData("Changable_Data", "WrongPassword", i);
-
-			WMPS_Login("Initiator", "Initiator_Password");
-			// driver.findElement(By.xpath("//*[contains(text(),'Hetero Labs')]")).click();
-			// driver.findElement(By.cssSelector("div[class='tile purple']
-			// p")).click();Thread.sleep(2000);
-			// WebElement MoveCursor =
-			// driver.findElement(By.xpath("//*[contains(text(),'Hetero
-			// Labs')]"));Thread.sleep(2000);
-			// actions.moveToElement(MoveCursor).perform();Thread.sleep(1000);
-
-			mp.Master_Click();
-			mp.Material_Master();
+			// ************************************************************************************************************
+			// ************************************************************************************************************
 			w.Create();
-			mp.Meterial_Type_Text(Material_Type_RawMaterial);// Keys_Enter
-			mp.Material_Description_SK(MaterialMasterRM);
+			mp.Meterial_Type_Text(Material_Type_RawMaterial);
+			// ************************************************************************************************************
+			//mp.Material_Description_SK(MaterialMasterRM);
+			mp.Material_Description_SK(MaterialMasterRM_Edit);
+			// ************************************************************************************************************
 			mp.Material_Long_Description_SK(Material_Long_Description_RawMaterial);
 			mp.Purchase_UOM_Text(Purchase_UOM);
 			mp.DropDown_Select();
@@ -73,11 +69,14 @@ public class TC_01_Material_Master_RawMaterial extends BaseClass {
 			mp.Production_Starting_Year(Production_Starting_Year);// nakko in Raw Material
 			mp.Remarks_SK(Remarks);
 			w.TT_15(AltUOM_X);// Alternate_UOM_X
-			mp.Alt_UOM_DD_Select(AltUOM);// AltUOM//L//Not in Raw Material
+			mp.Alt_UOM_DD_Select(AltUOM);// AltUOM//L //Not in Raw Material
 			w.TextBox17E(AltUOM_Y);// Alternate_UOM_Y
 			mp.QualityManagement_Click();
 			Thread.sleep(2000);
-			w.TEN_02(InspectIntervalPeriod);
+			w.TEN_01(InspectIntervalPeriod);
+			Thread.sleep(2000);
+			driver.findElement(By.xpath("//*[@class='form-control ng-untouched ng-pristine ng-valid']")).sendKeys(InspectIntervalPeriodDMY);
+			//w.TEN_02(InspectIntervalPeriodDMY);
 			Thread.sleep(2000);
 			mp.InspectionType(InspectionType);
 			Thread.sleep(2000);
@@ -93,13 +92,18 @@ public class TC_01_Material_Master_RawMaterial extends BaseClass {
 			// w.Password_Fill("");w.Submit_Type();w.Cross_Close_Button();
 			// w.Submit();w.Yes();w.Password_Fill(WrongPassword);w.Submit_Type();w.Ok();w.Cross_Close_Button();
 			// w.Submit();w.Yes();w.Password_Fill(InitiatorPassword);w.Submit_Type();w.Ok();
-			// ************************************************************************************************************
-			w.Submit();
-			w.Yes();
-			w.Password_Fill(InitiatorPassword);
-			w.SubmitType_1();
-			w.Ok();
-			// driver.close();
+			// Scenarios***************************************************************************************************
+			w.Submit_Button();w.Yes();
+			w.Password_Fill.sendKeys(Pro.getProperty("Initiator_Password"));
+			w.Submit_Button2();w.Ok();
+			// Scenarios***************************************************************************************************
+			//w.SearchBox(MaterialMasterRM);
+			w.SearchBox(MaterialMasterRM_Edit);// Vendor_Name_Manufacturer_Edit
+			// Scenarios***************************************************************************************************
+			w.ViewButton();scrollPagedown();
+
 		}
+		// driver.close();
+
 	}
 }

@@ -3,6 +3,7 @@ package com_3.Master_ReInitiate_Updated;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 import com.pageobjects.Common_Xpath;
@@ -13,46 +14,70 @@ import com.pageobjects.PWO_Xpath;
 import com.pageobjects.WMPS_OBJECT;
 import com.utilities.BaseClass;
 
-
-public class TC_05_Supplier_Assignment extends BaseClass
-{
+public class TC_05_Supplier_Assignment extends BaseClass {
 
 	@org.testng.annotations.Test
-	public static void Ordertypr() throws Exception
-	{
-		WMPS_OBJECT w=new WMPS_OBJECT(driver);
-		HomePage hp=new HomePage(driver);
-		Common_Xpath cxp=new Common_Xpath(driver);
-		PWO_Xpath p=new PWO_Xpath(driver);
-		DataFields df=new DataFields(driver);
-		Master_Xpaths mp =new Master_Xpaths(driver);
-		
-		WMPS_Login("Initiator","Password");
+	public static void Ordertypr() throws Exception {
+		WMPS_OBJECT w = new WMPS_OBJECT(driver);
+		HomePage hp = new HomePage(driver);
+		Common_Xpath cxp = new Common_Xpath(driver);
+		PWO_Xpath p = new PWO_Xpath(driver);
+		DataFields df = new DataFields(driver);
+		Master_Xpaths mp = new Master_Xpaths(driver);
+
+		// WMPS_Login("Initiator", "Initiator_Password");
 
 		int rowcount = xls.getRowCount("Material_Master");
 		System.out.println(rowcount);
-		for(int i=2; i<=2;i++)
-		{ 		
-			String MaterialMasterRM =xls.getCellData("Excel_Data", "MaterialMasterRM", i);
-			String Vendor_Name_Manufacturer =xls.getCellData("Excel_Data", "Vendor_Name_Manufacturer", i);
-			String Vendor_Name_Supplier =xls.getCellData("Excel_Data", "Vendor_Name_Supplier", i);
-			String Password=xls.getCellData("Changable_Data", "Password", i);
+		for (int i = 2; i <= 2; i++) {
 			
-			//String Today_Date =xls.getCellData("Changable_Data", "Today_Date", i);
-			String DateToday =xls.getCellData("Date", "DateToday", i);
-		
+			// **************************************************************************************************
+			// **************************************************************************************************	
+			String MaterialMasterRM = xls.getCellData("Excel_Data", "MaterialMasterRM", i);
+			String MaterialMasterRM_Edit = xls.getCellData("Excel_Data", "MaterialMasterRM_Edit", i);
+			// **************************************************************************************************	
+			// **************************************************************************************************
+			String Vendor_Name_Manufacturer = xls.getCellData("Excel_Data", "Vendor_Name_Manufacturer", i);
+			String Vendor_Name_Supplier = xls.getCellData("Excel_Data", "Vendor_Name_Supplier", i);
+			// **************************************************************************************************
+			String Vendor_Name_Supplier_Edit = xls.getCellData("Excel_Data", "Vendor_Name_Supplier_Edit", i);
+			String Vendor_Name_Manufacturer_Edit = xls.getCellData("Excel_Data", "Vendor_Name_Manufacturer_Edit", i);
+			// **************************************************************************************************
+			// **************************************************************************************************
+			// **********************************************************************************************************
+			String Password = xls.getCellData("Changable_Data", "Password", i);
+			Actions actions = new Actions(driver);
+
+			// String Today_Date =xls.getCellData("Changable_Data", "Today_Date", i);
+			String DateToday = xls.getCellData("Date", "DateToday", i);
+			String Date1DB = xls.getCellData("Date", "Date1DB", i);//Date one day Back 
+
+			WMPS_Login("Initiator", "Initiator_Password");
+			Thread.sleep(2000);
+			WebElement MoveCursor = driver.findElement(By.xpath("//*[text()='Masters ']"));
+			Thread.sleep(2000);
+			actions.moveToElement(MoveCursor).perform();
+			Thread.sleep(1000);
 			mp.Master_Click();
 			mp.Supplier_Assignment();
-			w.Create();	
-			mp.Material_Description_Text(MaterialMasterRM);			
-			mp.Manfacturer_Name_Text(Vendor_Name_Manufacturer);			
-			mp.Name_of_the_Supplier(Vendor_Name_Supplier);
-			w.VendorStatusDD("Approved");
-			w.qualifiedDate(DateToday);			
-			w.Save();
+			// **************************************************************************************************
+			w.SearchBox(Vendor_Name_Supplier_Edit);//SEARCHING 
+			// **************************************************************************************************
+			w.Edit_Action_Button();
+			w.Remarks("Supplier_Assignment Reinitiation");
+			w.qualifiedDate(DateToday);
+			//mp.Name_of_the_Supplier(Vendor_Name_Supplier_Edit);
+			w.Update_Button();
 			w.Yes();
-			//w.Password_Fill("");w.Submit_Type();w.Ok();
-			//w.Password_Fill(WrongPassword);w.Submit_Type();
-			w.Password_Fill(Password);
-			w.Submit_Type();w.Ok();
-		}}}
+			w.Password_Fill.sendKeys(Pro.getProperty("Initiator_Password"));
+			w.Submit_Button();
+			w.Ok_Button();
+			// **************************************************************************************************
+			w.SearchBox(Vendor_Name_Manufacturer_Edit);
+			// **************************************************************************************************
+			w.ViewButton();scrollPagedown();
+
+
+		}
+	}
+}

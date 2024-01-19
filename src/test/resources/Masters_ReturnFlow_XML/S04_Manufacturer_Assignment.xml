@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<test thread-count="5" name="Test">
+		<classes>
+		<!--	<class name="com_1.Master_Creation_Updated.TC_04_Manufacturer_Assignment_01" />
+			<class name="com_2.Master_Return_Updated.TC_03_Manufacturer_Assignment_Release" />-->
+			<class name="com_3.Master_ReInitiate_Updated.TC_04_Manufacturer_Assignment" />
+			<class name="com_4.Master_Release_Updated.TC_03_Manufacturer_Assignment_Release" />
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->

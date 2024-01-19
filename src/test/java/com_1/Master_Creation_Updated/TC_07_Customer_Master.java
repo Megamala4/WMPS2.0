@@ -18,10 +18,13 @@ public class TC_07_Customer_Master extends BaseClass {
 		PWO_Xpath p = new PWO_Xpath(driver);
 		DataFields df = new DataFields(driver);
 		Master_Xpaths mp = new Master_Xpaths(driver);
-
+		// ********************************************************************************************************************
+		// ********************************************************************************************************************
 		WMPS_Login("Initiator", "Initiator_Password");
 		mp.Master_Click();
 		mp.Customer_Master();
+		// ********************************************************************************************************************
+		// ********************************************************************************************************************
 		int rowcount = xls.getRowCount("Customer");
 		System.out.println(rowcount);
 		for (int i = 2; i <= rowcount; i++) {
@@ -52,13 +55,15 @@ public class TC_07_Customer_Master extends BaseClass {
 			w.Country(Country);
 			w.State(State);
 			w.CityId(City);
-			mp.postalSend(PostalCode);
+			mp.Postal_Code(Remarks);
 			Thread.sleep(2000);
 			w.Remarks(Remarks);
 			w.Save();
 			w.Yes();
 			w.Password_Fill(InitiatorPassword);
-			// w.SubmitType_1();w.Ok();driver.close();
+			w.SubmitType_1();
+			w.Ok();
 		}
+		driver.close();
 	}
 }

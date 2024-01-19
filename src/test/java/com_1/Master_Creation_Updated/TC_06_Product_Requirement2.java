@@ -30,7 +30,7 @@ public class TC_06_Product_Requirement2 extends BaseClass {
 
 			// DataMapping
 			String Vendor_Name_Manufacturer = xls.getCellData("Excel_Data", "Vendor_Name_Manufacturer", i);// *************
-			WMPS_Login("117777", "pwdInit");
+			WMPS_Login("Initiator", "Initiator_Password");
 			Thread.sleep(2000);
 			WebElement MoveCursor = driver.findElement(By.xpath("//*[text()='Masters ']"));
 			Thread.sleep(2000);
@@ -55,24 +55,24 @@ public class TC_06_Product_Requirement2 extends BaseClass {
 			// driver.findElement(By.xpath("//*[@formcontrolname='marketName']")).click();
 			//driver.findElement(By.xpath("//*[@formcontrolname='marketName']")).sendKeys("INDIA");
 			// driver.findElement(By.xpath("//*[@formcontrolname='marketName']")).click();
-			w.ManufactureName(Vendor_Name_Manufacturer);
+//			w.ManufactureName(Vendor_Name_Manufacturer);
 			w.MarketName("INDIA");// we can take from excel too
 			w.Add_Button();
-			w.ManufactureName(Vendor_Name_Manufacturer);
+//			w.ManufactureName(Vendor_Name_Manufacturer);
 			w.MarketName("UNITED KINGDOM");
 			w.Add_Button();
-			w.ManufactureName(Vendor_Name_Manufacturer);
+//			w.ManufactureName(Vendor_Name_Manufacturer);
 			w.MarketName("UNITED STATES");
 			w.Add_Button();
-			// w.Add_Button();
+			 w.Add_Button();
 			w.CheckBox_1();
 			w.CheckBox_2();
 			w.CheckBox_3();
-			w.Submit();
+		//	w.Submit();
 			w.Yes();
-			w.Password_Fill(Password);
-			//w.Submit_Type();w.Ok();
-
+			w.Password_Fill("Hetero@5");
+			w.SubmitType_1();w.Ok();
+			driver.close();
 		}
 	}
 }

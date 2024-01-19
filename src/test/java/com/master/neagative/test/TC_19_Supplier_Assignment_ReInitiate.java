@@ -29,9 +29,9 @@ public class TC_19_Supplier_Assignment_ReInitiate extends BaseClass
 			w.SearchBox(Name_of_the_Supplier);
 			w.Edit_Action_Button();
 			w.Remarks("Reinitiate the record");
-			w.UpdateButton();
+			w.Update_Button();
 			//w.OK_BUTTON();
 			driver.findElement(By.xpath("//*[@formcontrolname='qualifiedDate']")).sendKeys(ToDate_Edit1);Thread.sleep(4000);
-			w.UpdateButton();
+			w.Update_Button();
 			E_Signature_Masters("Password");
 		}}}

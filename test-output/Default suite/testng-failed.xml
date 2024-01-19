@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com_1.Master_Creation_Updated.TC_07_Customer_Master">
+      <class name="T4_Transactions_Release.TC_03_Quality_Inspection_Release">
         <methods>
           <include name="suiteSetUp"/>
-          <include name="Customer"/>
+          <include name="Ordertypr"/>
         </methods>
-      </class> <!-- com_1.Master_Creation_Updated.TC_07_Customer_Master -->
+      </class> <!-- T4_Transactions_Release.TC_03_Quality_Inspection_Release -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

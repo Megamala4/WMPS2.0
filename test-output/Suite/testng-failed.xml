@@ -3,54 +3,24 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="Transactions_Positive.TC_04_Quality_Inspection1">
+      <class name="com_1.Master_Creation_Updated.TC_05_Supplier_Assignment">
         <methods>
-          <include name="Quality_Inspection"/>
           <include name="suiteSetUp"/>
-          <include name="ExtentReport"/>
-          <include name="getResult"/>
+          <include name="Supplier_Assignment"/>
         </methods>
-      </class> <!-- Transactions_Positive.TC_04_Quality_Inspection1 -->
-      <class name="Transactions_Positive.TC_02_Good_Recipt_With_PO">
+      </class> <!-- com_1.Master_Creation_Updated.TC_05_Supplier_Assignment -->
+      <class name="com_3.Master_ReInitiate_Updated.TC_03_Vendor_Master_Supplier_ReInitiate">
         <methods>
           <include name="suiteSetUp"/>
-          <include name="ExtentReport"/>
           <include name="Ordertypr"/>
-          <include name="getResult"/>
         </methods>
-      </class> <!-- Transactions_Positive.TC_02_Good_Recipt_With_PO -->
-      <class name="Transactions_Positive.TC_01_Purchase_Order_Entry">
+      </class> <!-- com_3.Master_ReInitiate_Updated.TC_03_Vendor_Master_Supplier_ReInitiate -->
+      <class name="com_4.Master_Release_Updated.TC_04_Supplier_Assignment_Release">
         <methods>
           <include name="suiteSetUp"/>
-          <include name="ExtentReport"/>
-          <include name="Purchase_Order_Entry"/>
-          <include name="getResult"/>
-        </methods>
-      </class> <!-- Transactions_Positive.TC_01_Purchase_Order_Entry -->
-      <class name="Transactions_Release.TC_03_Quality_Inspection_Release">
-        <methods>
-          <include name="suiteSetUp"/>
-          <include name="ExtentReport"/>
           <include name="Ordertypr"/>
-          <include name="getResult"/>
         </methods>
-      </class> <!-- Transactions_Release.TC_03_Quality_Inspection_Release -->
-      <class name="Transactions_Release.TC_01_Purchase_Order_Entry_Release">
-        <methods>
-          <include name="Purchase_Order_Entry_Release"/>
-          <include name="suiteSetUp"/>
-          <include name="ExtentReport"/>
-          <include name="getResult"/>
-        </methods>
-      </class> <!-- Transactions_Release.TC_01_Purchase_Order_Entry_Release -->
-      <class name="Transactions_Release.TC_02_Good_Recipt_With_PO_Release">
-        <methods>
-          <include name="suiteSetUp"/>
-          <include name="ExtentReport"/>
-          <include name="Ordertypr"/>
-          <include name="getResult"/>
-        </methods>
-      </class> <!-- Transactions_Release.TC_02_Good_Recipt_With_PO_Release -->
+      </class> <!-- com_4.Master_Release_Updated.TC_04_Supplier_Assignment_Release -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

@@ -46,7 +46,7 @@ public class TC_05_Vendor_Master_Manufacturer extends BaseClass
 			Select country=new Select(driver.findElement(By.xpath("//*[@formcontrolname='country']")));country.selectByIndex(4);Thread.sleep(2000);
 			Select state=new Select(driver.findElement(By.xpath("//*[@formcontrolname='state']")));state.selectByIndex(2);Thread.sleep(2000);
 			Select city=new Select(driver.findElement(By.xpath("//*[@formcontrolname='cityId']")));city.selectByIndex(2);Thread.sleep(2000);		
-			mp.postalSend(Postal_Code);Thread.sleep(2000);
+			mp.Postal_Code(Postal_Code);Thread.sleep(2000);
 			w.Submit();			
 			E_Signature1("Password");
 		}}}

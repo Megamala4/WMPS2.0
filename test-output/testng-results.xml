@@ -2,38 +2,38 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-12-18T17:31:31 IST" name="Default suite" finished-at="2023-12-18T17:32:22 IST" duration-ms="50986">
+  <suite started-at="2024-01-19T14:22:50 IST" name="Default suite" finished-at="2024-01-19T14:23:23 IST" duration-ms="33456">
     <groups>
     </groups>
-    <test started-at="2023-12-18T17:31:31 IST" name="Default test" finished-at="2023-12-18T17:32:22 IST" duration-ms="50986">
-      <class name="com_1.Master_Creation_Updated.TC_07_Customer_Master">
-        <test-method is-config="true" signature="suiteSetUp()[pri:0, instance:com_1.Master_Creation_Updated.TC_07_Customer_Master@4b6e2263]" started-at="2023-12-18T17:31:31 IST" name="suiteSetUp" finished-at="2023-12-18T17:31:34 IST" duration-ms="2667" status="PASS">
+    <test started-at="2024-01-19T14:22:50 IST" name="Default test" finished-at="2024-01-19T14:23:23 IST" duration-ms="33456">
+      <class name="T4_Transactions_Release.TC_03_Quality_Inspection_Release">
+        <test-method is-config="true" signature="suiteSetUp()[pri:0, instance:T4_Transactions_Release.TC_03_Quality_Inspection_Release@648c94da]" started-at="2024-01-19T14:22:50 IST" name="suiteSetUp" finished-at="2024-01-19T14:22:53 IST" duration-ms="3551" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- suiteSetUp -->
-        <test-method signature="Customer()[pri:0, instance:com_1.Master_Creation_Updated.TC_07_Customer_Master@4b6e2263]" started-at="2023-12-18T17:31:34 IST" name="Customer" finished-at="2023-12-18T17:32:22 IST" duration-ms="48284" status="FAIL">
+        <test-method signature="Ordertypr()[pri:0, instance:T4_Transactions_Release.TC_03_Quality_Inspection_Release@648c94da]" started-at="2024-01-19T14:22:53 IST" name="Ordertypr" finished-at="2024-01-19T14:23:23 IST" duration-ms="29835" status="FAIL">
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//button[contains(text(),'Yes') or contains(text(),'yes')]"}
-  (Session info: chrome=120.0.6099.109)
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"(//*[contains(text(),'USDE')])[1]"}
+  (Session info: chrome=120.0.6099.225)
 For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: '4.0.0-beta-3', revision: '5d108f9a67'
 System info: host: 'AILT-100416', ip: '10.50.53.87', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [3048941978e5f1d190444b87bb7af6c1, findElement {using=xpath, value=//button[contains(text(),'Yes') or contains(text(),'yes')]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.109, chrome: {chromedriverVersion: 120.0.6099.71 (9729082fe617..., userDataDir: C:\Users\sharuk.k\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61234}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:61234/devtoo..., se:cdpVersion: 120.0.6099.109, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 3048941978e5f1d190444b87bb7af6c1]]>
+Command: [f67977e229f4ee2dedde9eecd59dc8ad, findElement {using=xpath, value=(//*[contains(text(),'USDE')])[1]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.225, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\sharuk.k\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60710}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60710/devtoo..., se:cdpVersion: 120.0.6099.225, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f67977e229f4ee2dedde9eecd59dc8ad]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//button[contains(text(),'Yes') or contains(text(),'yes')]"}
-  (Session info: chrome=120.0.6099.109)
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"(//*[contains(text(),'USDE')])[1]"}
+  (Session info: chrome=120.0.6099.225)
 For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: '4.0.0-beta-3', revision: '5d108f9a67'
 System info: host: 'AILT-100416', ip: '10.50.53.87', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [3048941978e5f1d190444b87bb7af6c1, findElement {using=xpath, value=//button[contains(text(),'Yes') or contains(text(),'yes')]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.109, chrome: {chromedriverVersion: 120.0.6099.71 (9729082fe617..., userDataDir: C:\Users\sharuk.k\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61234}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:61234/devtoo..., se:cdpVersion: 120.0.6099.109, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 3048941978e5f1d190444b87bb7af6c1
+Command: [f67977e229f4ee2dedde9eecd59dc8ad, findElement {using=xpath, value=(//*[contains(text(),'USDE')])[1]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.225, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\sharuk.k\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60710}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60710/devtoo..., se:cdpVersion: 120.0.6099.225, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f67977e229f4ee2dedde9eecd59dc8ad
 at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
 at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
 at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
@@ -47,8 +47,8 @@ at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:619)
 at org.openqa.selenium.remote.RemoteWebDriver$Mechanism$2.findElement(RemoteWebDriver.java:1258)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:386)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
-at com.pageobjects.WMPS_OBJECT.Yes(WMPS_OBJECT.java:850)
-at com_1.Master_Creation_Updated.TC_07_Customer_Master.Customer(TC_07_Customer_Master.java:59)
+at com.pageobjects.WMPS_OBJECT.USDE(WMPS_OBJECT.java:670)
+at T4_Transactions_Release.TC_03_Quality_Inspection_Release.Ordertypr(TC_03_Quality_Inspection_Release.java:48)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 at java.base/java.lang.reflect.Method.invoke(Method.java:577)
 at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
@@ -80,8 +80,8 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Customer -->
-      </class> <!-- com_1.Master_Creation_Updated.TC_07_Customer_Master -->
+        </test-method> <!-- Ordertypr -->
+      </class> <!-- T4_Transactions_Release.TC_03_Quality_Inspection_Release -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

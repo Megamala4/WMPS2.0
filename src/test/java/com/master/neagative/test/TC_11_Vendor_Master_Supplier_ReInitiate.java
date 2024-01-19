@@ -39,10 +39,10 @@ public class TC_11_Vendor_Master_Supplier_ReInitiate extends BaseClass
 			w.SearchBox(Vendor_name);
 			w.Edit_Action_Button();
 			w.Comments("Vendor_Master_Supplier_ReInitiate");
-			w.UpdateButton();
+			w.Update_Button();
 		//	w.OK_BUTTON();	
 			driver.findElement(By.xpath("//*[@formcontrolname='street']")).clear();
 			driver.findElement(By.xpath("//*[@formcontrolname='street']")).sendKeys(Street_Edit);Thread.sleep(1000);
-			w.UpdateButton();
+			w.Update_Button();
 			E_Signature1("Password");
 		}}}

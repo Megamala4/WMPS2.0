@@ -45,6 +45,6 @@ public class TC_03_Purchase_Order_Entry_ReInitiate extends BaseClass
 			RequestUom.selectByIndex(1);
 			w.Remarks("Purchase_Order_Entry_ReInitiate");			
 			driver.findElement(By.id("Purchse-entry-add")).click();Thread.sleep(2000);//Add_Button
-			w.UpdateButton();Thread.sleep(2000);
+			w.Update_Button();Thread.sleep(2000);
 			E_Signature_Masters("Password");			
 		}}}

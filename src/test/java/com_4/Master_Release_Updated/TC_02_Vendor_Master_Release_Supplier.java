@@ -19,27 +19,41 @@ public class TC_02_Vendor_Master_Release_Supplier extends BaseClass {
 	public static void Ordertypr() throws Exception {
 		WMPS_OBJECT w = new WMPS_OBJECT(driver);
 
+		WMPS_Login("Approver_ID", "Approver_Password");
+		w.Second_Level();
+		w.ReviewApprovalCategory("Vendor Master Release");
 		int rowcount = xls.getRowCount("Material_Master");
 		System.out.println(rowcount);
 		for (int i = 2; i <= 2; i++) {
+			// ******************************************************************************************************
+			String Vendor_Name_Supplier = xls.getCellData("Excel_Data", "Vendor_Name_Supplier", i);
+			String Vendor_Name_Supplier_Edit = xls.getCellData("Excel_Data", "Vendor_Name_Supplier_Edit", i);
+			// ******************************************************************************************************
+			// ******************************************************************************************************
+			String InitiatorPassword = xls.getCellData("Changable_Data", "InitiatorPassword", i);
 			String ApproverPassword = xls.getCellData("Changable_Data", "ApproverPassword", i);
-
-			WMPS_Login("Approver_ID", "Approver_Password");
-			w.Second_Level();
-			w.ReviewApprovalCategory("Vendor Master Release");
+			String WrongPassword = xls.getCellData("Changable_Data", "WrongPassword", i);
+			// ******************************************************************************************************
+			Thread.sleep(2000);
 			w.Search_Button();
-			// w.SearchBox(Vendor_Name_Supplier);Thread.sleep(2000);Thread.sleep(2000);
-			// w.SearchBox(" Created");Thread.sleep(2000);Thread.sleep(2000);
+			// ******************************************************************************************************
+			//w.SearchBox(Vendor_Name_Supplier);
+			w.SearchBox(Vendor_Name_Supplier_Edit);
+			// ******************************************************************************************************
 			w.Edit_Action_Button();
 			w.Comments("Vendor_Master_Release");
-			Thread.sleep(2000);
-			w.ActionLevel("Release");
-			w.Submit();
-			w.Yes();
-			w.Password_Fill(ApproverPassword);
-			w.SubmitType_2();
-			w.Ok();
-//			driver.close();
+			// ******************************************************************************************************
+			//w.ActionLevelApproverAction(Status);
+			w.ActionLevelApproverAction(Pro.getProperty("Action_1"));
+			// ******************************************************************************************************
+			w.Submit_Button();w.Yes();
+			w.Password_Fill.sendKeys(Pro.getProperty("Approver_Password"));
+		//	w.Submit_Button2();w.Ok();
+			// ******************************************************************************************************
+			//w.SearchBox(Vendor_Name_Supplier);
+			w.SearchBox(Vendor_Name_Supplier_Edit);
+			// ******************************************************************************************************
+			w.ViewButton();scrollPagedown();
 		}
 	}
 }

@@ -35,6 +35,6 @@ public class TC_15_Manufacturer_Assignment_ReInitiate extends BaseClass
 			driver.findElement(By.xpath("//*[@formcontrolname='fromDate']")).sendKeys(fromdate);Thread.sleep(4000); // from date
 			driver.findElement(By.xpath("//*[@formcontrolname='todate']")).sendKeys(ToDate_Edit);Thread.sleep(4000); // to date
 			w.Comments("A strategic plan this year to reinitiate the accreditation process");
-			w.UpdateButton();
+			w.Update_Button();
 			E_Signature_Masters("Password");
 		}}}

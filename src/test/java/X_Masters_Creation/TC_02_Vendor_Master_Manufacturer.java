@@ -82,7 +82,7 @@ public class TC_02_Vendor_Master_Manufacturer extends BaseClass
 			Select city=new Select(driver.findElement(By.xpath("//*[@formcontrolname='cityId']")));city.selectByIndex(2);Thread.sleep(2000);
 
 			
-			mp.postalSend(Postal_Code);Thread.sleep(2000);
+			mp.Postal_Code(Postal_Code);Thread.sleep(2000);
 			
 //			w.Submit();
 //			w.Not_Create();
